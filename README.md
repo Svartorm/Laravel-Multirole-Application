@@ -1,66 +1,99 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Laravel Multirole Application
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This is a simple Laravel application that demonstrates how to implement a multi-role system with ACL permissions. The application allows you to manage users, roles, and products. The admin user has full access to all features, while the other users have limited access based on their roles and permissions.
 
-## About Laravel
+## Prerequisites
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- PHP (>= 7.4)
+- Composer
+- Laravel Framework (>= 8.x)
+- MySQL or any other supported database
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Installation
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+1. Clone the repository or download the source code.
 
-## Learning Laravel
+2. Open a terminal or command prompt and navigate to the project directory.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+3. Install the project dependencies by running the following command:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+```bash
+composer install
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1. Create a new MySQL database for the application.
 
-## Laravel Sponsors
+2. Rename the `.env.example` file to `.env` and update the database configuration values with your database credentials.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+3. Generate a new application key by running the following command:
+```
+php artisan key:generate
+```
+1. Run the database migrations and seeders to set up the initial database structure and data:
 
-### Premium Partners
+```
+php artisan migrate --seed
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+1. Start the development server by running the following command:
+
+```
+php artisan serve
+```
+
+1. Access the application in your web browser at `http://localhost:8000/`.
+
+## Usage
+
+- Use the following credentials to log in as the admin user:
+
+Email: admin@gmail.com
+Password: 123456
+
+- The application allows you to manage users, roles, and products. The admin user has full access to all features.
+
+- After logging in, you can perform the following actions:
+
+- Users:
+   - View a list of users.
+   - Create a new user.
+   - Edit an existing user.
+   - Delete a user.
+
+- Roles:
+   - View a list of roles.
+   - Create a new role.
+   - Edit an existing role.
+   - Delete a role.
+
+- Products:
+   - View a list of products.
+   - Create a new product.
+   - Edit an existing product.
+   - Delete a product.
+
+- The ACL permissions are pre-defined with the following actions:
+
+- Role Permissions:
+   - role-list
+   - role-create
+   - role-edit
+   - role-delete
+
+- Product Permissions:
+     - product-list
+     - product-create
+     - product-edit
+     - product-delete
+
+- You can modify the permissions and add more as per your requirements by editing the seeders or using the application's interface.
 
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Feel free to contribute to this project by creating issues or submitting pull requests. Any improvements or bug fixes are welcome.
 
-## Code of Conduct
+## License and Author
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+**Author**: [Hugo 'Svartorm' FRANGIAMONE](http://svartorm.me).
+</br>
+This project is licensed under the [MIT License](LICENSE).
